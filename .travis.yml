@@ -1,0 +1,20 @@
+language: node.js
+node_js:
+  - 10
+before_install:
+  - npm install -g @angular/cli
+install: npm install
+
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: heroku
+  app:steam-like-games-store
+  api_key:
+    secure: '547b433a-8c71-4d99-8955-975821edcb69'
+
+
+
