@@ -12,6 +12,7 @@ export class UserService {
   private USER_KEY_LOCAL_STORAGE: string = 'currentUser';
 
 
+
   constructor(private firebase: AngularFireDatabase) {
   }
 
@@ -101,10 +102,16 @@ export class UserService {
   }
 
   updateUser(user: User) {
-    this.updateUserInDB(user);
-    if (this.currentUser()?.id === user.id) {
-      this.saveCurrentUser(user);
-    }
+    return this.updateUserInDB(user)
+      .then(() => {
+        if (this.currentUser()?.id === user.id) {
+          this.saveCurrentUser(user);
+        }
+        return true;
+      })
+      .catch(err => {
+        return false;
+      });
   }
 
   private updateUserInDB(user: User) {

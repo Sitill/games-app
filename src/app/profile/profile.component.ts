@@ -17,6 +17,10 @@ export class ProfileComponent implements OnInit {
   emailMessage!:string;
   ageMessage!:string;
 
+  profileUpdateSuccessful:boolean = true;
+  profileUpdateMessage:string = '';
+
+
   constructor(private userService:UserService) {
 
   }
@@ -31,6 +35,7 @@ export class ProfileComponent implements OnInit {
   }
 
   clearMessages(){
+    this.profileUpdateMessage = '';
     this.emailMessage = '';
     this.ageMessage = '';
   }
@@ -55,7 +60,15 @@ export class ProfileComponent implements OnInit {
       this.currentUser.username = values.username;
       this.currentUser.age = values.age;
       this.currentUser.email = values.email;
-      this.userService.updateUser(this.currentUser);
+      this.userService.updateUser(this.currentUser)
+        .then(success => {
+          if (success) {
+            this.profileUpdateMessage = 'Profile updated!'
+          } else {
+            this.profileUpdateMessage = 'Profile update failed!'
+            this.profileUpdateSuccessful = false;
+          }
+        });
     }
   }
 
