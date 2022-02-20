@@ -1,0 +1,23 @@
+$purple: #6C69FF;
+
+
+ul {
+  margin: 0;
+  padding: .5em .5em;
+  font-size: 20px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+
+  li {
+    padding: 0 .7em;
+
+    a:hover,a:active {
+      color: $purple;
+    }
+  }
+}
+

@@ -1,0 +1,87 @@
+$purple: #6C69FF;
+$purple-dark: #4f4cd2;
+$purple-light:#BDBCFF;
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+
+  &-header {
+    height: 150px;
+    color: white;
+    background: $purple-light;
+    position: relative;
+
+    h2 {
+      margin: 8px;
+    }
+
+    .price {
+      text-align: end;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &-body {
+    font-size: 13px;
+    padding: 1em;
+    color: black;
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .btn-dwl {
+    width: 48%;
+    background: $purple;
+    padding: 8px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.25);
+
+    &:hover {
+      background: $purple-dark;
+    }
+  }
+
+  .btn-sh {
+    width: 48%;
+    background: white;
+    padding: 8px;
+    border: none;
+    color: $purple;
+    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.25);
+
+    &:hover {
+      background: $purple-light;
+      color: $purple-dark;
+    }
+  }
+}
+

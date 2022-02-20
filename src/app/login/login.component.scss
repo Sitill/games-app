@@ -1,0 +1,47 @@
+$purple: #6C69FF;
+
+.login-container {
+  width: 320px;
+  min-height: 340px;
+  margin: 7em auto;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+.login-header {
+  font-size: 24px;
+  margin-top: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  font-size: 14px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.login-inp {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  label {
+    margin-bottom: .2em;
+  }
+
+  input {
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+}
+
+.error-message {
+  width: 200px;
+  margin: 0 auto 1em;
+  color: red;
+}
+

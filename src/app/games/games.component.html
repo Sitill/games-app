@@ -1,0 +1,46 @@
+<div class="page-container">
+<h2>Games</h2>
+<app-search [headerText]="'Search Games'" [parentComponent]="this"></app-search>
+<h2>Featured Games</h2>
+<mat-progress-spinner *ngIf="isLoading" class="spinner" [color]="" [strokeWidth]="3" [diameter]="100" mode="indeterminate"></mat-progress-spinner>
+<div *ngIf="!isLoading && {array: (games | filter: this.gameService.gameHasText(this.searchString) | filter: this.gameService.gameIsNotInUserLibrary(this.userService.currentUser()!)
+                             | filter: this.gameService.gamePriceIsGTE(price)
+                            | filter: this.gameService.gameHasAnyTag(tags))} as filteredGames">
+  <div class="games">
+    <h3 class="games-empty" *ngIf="filteredGames.array.length<=0">No results found!</h3>
+    <div *ngIf="filteredGames.array.length>0" class="games-list">
+      <div class="games-item" *ngFor="let game of filteredGames.array">
+        <app-game-card [library]="false" [game]="game"></app-game-card>
+      </div>
+    </div>
+    <div class="games-filter">
+      <div class="filter">
+        <h3>Filter by price</h3>
+        <div class="filter-input">
+          <input value="{{price}}" id="price" min="{{minPrice}}" max="{{maxPrice}}" [(ngModel)]="price" type="range">
+          <label class="price-label" for="price">{{price}} UAH</label>
+        </div>
+      </div>
+      <div class="filter">
+        <h3>Filter by tag</h3>
+        <div class="filter-input">
+          <label for="tagIndie"><input (click)="checkboxHandler(this.INDIE,$event)" id="tagIndie" type="checkbox" name="tag" value="Indie"> Indie</label>
+          <label for="tagAction"><input (click)="checkboxHandler(this.ACTION,$event)" id="tagAction" type="checkbox" name="tag" value="Action"> Action</label>
+          <label for="tagAdventure"><input (click)="checkboxHandler(this.ADVENTURE,$event)" id="tagAdventure" type="checkbox" name="tag" value="Indie"> Adventure</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

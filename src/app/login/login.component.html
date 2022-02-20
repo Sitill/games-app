@@ -1,0 +1,26 @@
+<div class="login-container">
+  <h1 class="login-header">{{loginMode ? "Sign In": "Sign Up"}}</h1>
+  <div>
+    <form [formGroup]="loginForm" (ngSubmit)="accountAction()">
+      <div class="login-inp">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" type="email" placeholder="Email">
+      </div>
+      <div class="error-message" *ngIf="emailMessage">{{emailMessage}}</div>
+      <div class="login-inp">
+        <label for="password">Password</label>
+        <input formControlName="password" id="password" type="password" placeholder="Password">
+      </div>
+      <div class="error-message" *ngIf="passwordMessage">{{passwordMessage}}</div>
+      <div *ngIf="errorMessage" class="error-message">
+        {{errorMessage}}
+      </div>
+      <div class="login-inp">
+        <button class="button-wide" type="submit">Submit</button>
+      </div>
+      <div class="login-inp">
+        <button class="button-wide" type="button" (click)="changeMode()">{{loginMode?"Sign Up":"Sign In"}}</button>
+      </div>
+    </form>
+  </div>
+</div>

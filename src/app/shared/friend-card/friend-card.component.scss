@@ -1,0 +1,47 @@
+$warn: #FF6F6F;
+$warn-dark: #e35151;
+$purple: #6C69FF;
+$purple-dark: #4f4cd2;
+
+.friend-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 4px 16px;
+  border-radius: 4px;
+}
+
+.friend-remove {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: $warn;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Roboto',sans-serif;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+
+  &:hover {
+    background-color: $warn-dark;
+  }
+}
+
+.friend-add {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: $purple;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+  font-family: 'Roboto',sans-serif;
+
+  &:hover {
+    background-color: $purple-dark;
+  }
+}

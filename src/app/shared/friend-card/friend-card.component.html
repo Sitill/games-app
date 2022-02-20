@@ -1,0 +1,14 @@
+<div class="friend-card">
+  <p>{{user.username ? user.username: user.email}}</p>
+  <button class="friend-remove" (click)="removeFriend()" *ngIf="isMyFriend">Remove Friend</button>
+  <button class="friend-add" (click)="addFriend()" *ngIf="!isMyFriend">Add Friend</button>
+</div>
+
+
+
+
+
+
+
+
+

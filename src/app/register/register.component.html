@@ -1,0 +1,21 @@
+<div class="login-container">
+  <h1 class="login-header">Sign Up</h1>
+  <div>
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <div class="login-inp">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" type="email" placeholder="Email">
+      </div>
+      <div class="login-inp">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Password">
+      </div>
+      <div class="login-inp">
+        <button type="submit">Submit</button>
+      </div>
+      <div class="login-inp">
+        <button routerLink="login" (click)="goToLogin()" type="button">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>

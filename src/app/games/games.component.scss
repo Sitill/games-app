@@ -1,0 +1,79 @@
+
+.games {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: end;
+  position: relative;
+
+  &-list {
+    width: 80%;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+  }
+
+  &-empty {
+    position: absolute;
+    left:0;
+    top:0;
+  }
+
+  &-filter {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    padding: 8px;
+    border-left: 1px solid black;
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+
+
+.filter {
+  margin-bottom: 24px;
+
+  &-input {
+    margin: 8px;
+
+    label {
+      display: block;
+      margin-top: 16px;
+    }
+
+    .price-label {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+  }
+
+
+
+}
+
+@media (max-width: 992px) {
+  .games-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .games {
+    margin: 0 8px;
+  }
+  .games-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .games-filter {
+    margin: 8px;
+    padding: 4px;
+  }
+}

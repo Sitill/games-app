@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+$purple: #6C69FF;
+$purple-dark: #4f4cd2;
+$purple-light:#BDBCFF;
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F4F4;;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+}
+
+.page-container {
+  margin: 3em 6em;
+  padding: 1em 4em 4em;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  min-height: 100vh;
+}
+
+.button-wide {
+  background: $purple;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+
+  &:hover {
+    background: $purple-dark;
+  }
+}
+
+
+
+.spinner {
+  margin: 5em auto;
+}
+
+
+@media (max-width: 850px) {
+  .page-container {
+    margin: 3em 2em;
+    padding: 1em 1em;
+  }
+}
+
+
+

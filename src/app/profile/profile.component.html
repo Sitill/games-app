@@ -1,0 +1,24 @@
+<div class="profile-container">
+  <h1 class="login-header">Profile</h1>
+  <div>
+    <form [formGroup]="profileForm" (ngSubmit)="updateUserProfile()">
+      <div class="login-inp">
+        <label for="username">Username</label>
+        <input formControlName="username" id="username" type="text" placeholder="Username">
+      </div>
+      <div class="login-inp">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" type="email" placeholder="Email">
+      </div>
+      <div class="error-message" *ngIf="emailMessage">{{emailMessage}}</div>
+      <div class="login-inp">
+        <label for="age">Age</label>
+        <input formControlName="age" id="age" type="number" min="0" max="150" placeholder="Age">
+      </div>
+      <div class="error-message" *ngIf="ageMessage">{{ageMessage}}</div>
+      <div class="login-inp">
+        <button class="button-wide">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

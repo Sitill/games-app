@@ -1,0 +1,27 @@
+<div class="page-container">
+<h2>Friends</h2>
+<app-search [headerText]="'Search Friends'" [parentComponent]="this"></app-search>
+<h2>{{searchString ? 'Search Friends: '+searchString:'My Friends'}}</h2>
+<mat-progress-spinner *ngIf="isLoading" class="spinner" [color]="" [strokeWidth]="3" [diameter]="100" mode="indeterminate"></mat-progress-spinner>
+<div *ngIf="!isLoading && {array: searchString ?
+                          (users | filter: this.userService.userHasSearchString(searchString)) :
+                          (users | filter: this.userService.isMyFriend(this.userService.currentUser()!))} as filteredFriends">
+  <h3 *ngIf="filteredFriends.array.length<=0">No results found!</h3>
+  <div class="friends">
+    <div *ngFor="let user of filteredFriends.array">
+      <app-friend-card [user]="user"></app-friend-card>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
