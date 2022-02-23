@@ -143,9 +143,8 @@ export class UserService {
   userHasSearchString(searchString:string):Function {
     return (user:User):boolean => {
       searchString = searchString.toLowerCase();
-      return (user.username.toLowerCase().includes(searchString)
-          || user.email.toLowerCase().includes(searchString))
-        && user.id !== this.currentUser()!.id;
+      return (user.username?user.username.toLowerCase().includes(searchString)
+          :user.email.toLowerCase().includes(searchString)) && user.id !== this.currentUser()!.id;
     }
   }
 

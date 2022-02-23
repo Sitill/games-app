@@ -68,9 +68,16 @@
 @media (max-width: 576px) {
   .games {
     margin: 0 8px;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .games-empty {
+    position: static;
   }
   .games-list {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
   }
   .games-filter {
     margin: 8px;
